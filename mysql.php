@@ -3,7 +3,7 @@
 require 'config.php';
 
 $mysql = new PDO('mysql:host=localhost;dbname=test', 'test', 'test');
-$s = $mysql->prepare('CREATE TABLE IF NOT EXISTS `test` (`id` int(11) NOT NULL, `field` text NOT NULL) ENGINE=InnoDb');
+$s = $mysql->prepare('CREATE TABLE IF NOT EXISTS `test` (`id` int(11) NOT NULL, `field` text NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDb');
 $s->execute();
 
 foreach ($STEPS as $count) {
